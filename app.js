@@ -1,4 +1,5 @@
 var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+var mysql = require('mysql');
 
 var xhr = new XMLHttpRequest();
 
@@ -6,6 +7,11 @@ var serverFunction =
   'https://kingsbridgetemperature.azurewebsites.net/api/StoreTemperatureData?code=9HCPEi8fV5arG97GyyYfzOBaN7UzyYsWateAh5qOka55JFUZxrwmkQ==';
 
 var tempTimeTaken = new Date();
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log('Connected!');
+});
 
 var data = {
   temp: 90.3,
