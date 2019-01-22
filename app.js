@@ -3,7 +3,7 @@ var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 var xhr = new XMLHttpRequest();
 
 var serverFunction =
-  'https://kingsbridgetemp.azurewebsites.net/api/HttpTrigger1?code=KfPpR4uOu3aTmIGXeyWzOniSE/Bicz712bGSvK0NkN/6MZW3vbMAkA==';
+  'https://kingsbridgetemperature.azurewebsites.net/api/StoreTemperatureData?code=9HCPEi8fV5arG97GyyYfzOBaN7UzyYsWateAh5qOka55JFUZxrwmkQ==';
 
 var tempTimeTaken = new Date();
 
@@ -15,6 +15,8 @@ var data = {
 
 xhr.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
+    console.log(this.responseText);
+  } else {
     console.log(this.responseText);
   }
 };
